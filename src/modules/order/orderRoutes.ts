@@ -4,14 +4,9 @@ import OrderController from './orderController';
 const router = Router();
 const authController = new OrderController();
 
-router.get(
+router.post(
     '/',
-    authController.getOrders
-);
-
-router.get(
-    '/:orderId',
-    authController.getOrder
+    authController.createOrder
 );
 
 router.put(
