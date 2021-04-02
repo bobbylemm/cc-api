@@ -1,9 +1,18 @@
 import { db, NewData } from '../../lib'
 export interface Order {
   title: string;
-  bookingDate: string;
-  address: string;
-  customer: string;
+  bookingDate: number;
+  address: {
+    city: string;
+    country: string;
+    street: string;
+    zip: string;
+  };
+  customer: {
+    email: string;
+    name: string;
+    phone: string;
+  };
 }
 
 export default class MessageRepo {

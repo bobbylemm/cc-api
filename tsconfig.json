@@ -12,6 +12,7 @@
       "noImplicitThis": true,
       "rootDir": "./src",
       "baseUrl": ".",
+      "resolveJsonModule": true,
       "paths": {
         "*": ["node_modules/*"]
       }
