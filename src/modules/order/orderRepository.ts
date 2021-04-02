@@ -15,12 +15,18 @@ export interface Order {
   };
 }
 
-export default class MessageRepo {
+export default class OrderRepo {
   private _orderRef = db.collection('orders');
 
   async create(data: Order): Promise<NewData<Order>> {
     const newOrderRef = await this._orderRef.add(data);
 
     return { id: newOrderRef.id, data };
+  }
+
+  async update(id: string, data: Partial<Order>): Promise<Partial<Order>> {
+    await this._orderRef.doc(id).update(data);
+
+    return { ...data };
   }
 }

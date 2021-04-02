@@ -22,7 +22,7 @@ export default class OrderValidator {
       check('title')
         .isString()
         .withMessage('Title required'),
-      check('bookingDate').isNumeric().withMessage('Booking date is required').isLength({min: 1, max: 4}),
+      check('bookingDate', 'Booking date is required').exists(),
     ];
   }
 }

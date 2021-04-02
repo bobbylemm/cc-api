@@ -13,13 +13,19 @@ export default class OrderController {
         const payload = req.body as Order;
         try {
             const data = await this.repo.create(payload)
-            return res.status(201).json({ data });
+            return res.status(201).json({ ...data });
         } catch (error) {
             return error
         }
     }
 
-    public async editOrder(req: Request, res: Response) {
-
+    public editOrder = async (req: Request, res: Response) => {
+        const payload = req.body as Partial<Order>;
+        try {
+            const data = await this.repo.update(req.params.orderId, payload)
+            return res.status(200).json({ data });
+        } catch (error) {
+            return error
+        }
     }
 }
