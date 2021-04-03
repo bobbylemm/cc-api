@@ -13,7 +13,6 @@ export default class OrderValidator {
       check('address.city').exists().isString().withMessage('Address city is required'),
       check('address.country').exists().isString().withMessage('Address country is required'),
       check('address.street').exists().isString().withMessage('Address street is required'),
-      check('address.zip').exists().isString().withMessage('Address zip is required'),
     ];
   }
 

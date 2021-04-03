@@ -31,7 +31,6 @@ test('Can create an order', async () => {
             city: "Berlin",
             country: "Germany",
             street: "Wriezener Str. 12",
-            zip: "13055"
         },
         customer: {
             email: "emad.alam@construyo.de",
@@ -49,7 +48,6 @@ test('Can create an order', async () => {
                 city: "Berlin",
                 country: "Germany",
                 street: "Wriezener Str. 12",
-                zip: "13055"
             },
             customer: {
                 email: "emad.alam@construyo.de",
@@ -66,7 +64,6 @@ test('Cannot create an order with incomplete payload (validation failed)', async
             city: "Berlin",
             country: "Germany",
             street: "Wriezener Str. 12",
-            zip: "13055"
         },
         customer: {
             email: "emad.alam@construyo.de",
@@ -91,8 +88,6 @@ test('Can update an order', async () => {
         title: 'soap',
         bookingDate: 1554284950000,
     })
-
-    console.log(response.body, '->>>>')
 
     expect(response.status).toEqual(200)
 })
