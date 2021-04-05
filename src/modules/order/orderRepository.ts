@@ -19,9 +19,14 @@ export default class OrderRepo {
   private _orderRef = db.collection('orders');
 
   async create(data: Order): Promise<NewData<Order>> {
-    const newOrderRef = await this._orderRef.add(data);
+    try {
+      const newOrderRef = await this._orderRef.add(data);
 
-    return { id: newOrderRef.id, data };
+      return { id: newOrderRef.id, data };
+    } catch(error) {
+      console.log(error)
+      throw error
+    }
   }
 
   async update(id: string, data: Partial<Order>): Promise<Partial<Order>> {
