@@ -32,8 +32,8 @@ FIREBASE_CLIENT_EMAIL=your-firebase-client-email
 
 ### Project Routes
 - `post - /orders`
-Payload => ```
- {
+```
+Payload => {
   "title": any title,
   "bookingDate": booking date,
   "customer": {
@@ -48,8 +48,10 @@ Payload => ```
   }
  }
 ```
+
 - `put - /orders/:id`
-Payload => ```
+```
+Payload => 
   {
     "title": any title,
     "bookingDate": booking date
