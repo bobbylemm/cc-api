@@ -18,3 +18,40 @@ This project opens on port `http://localhost:3090`
 - `Middleware` this contains API middlewares
 - `lib` this contains configurations for firebase configurations and typescript type definitions
 
+### How To Run Project
+- First clone this project
+- Run yarn install
+- Create a .env file containing the following 
+```
+FIREBASE_PROJECTID=your-firebase-projectid
+FIREBASE_PRIVATE_KEY=your-firebase-private-key,
+FIREBASE_CLIENT_EMAIL=your-firebase-client-email
+```
+- Run yarn test to view client tests status
+- Finally run yarn dev
+
+### Project Routes
+- `post - /orders`
+Payload => ```
+ {
+  "title": any title,
+  "bookingDate": booking date,
+  "customer": {
+    "name": customer name
+    "email": customer email,
+    "phone": customer phone number
+  },
+  "address": {
+    "city": address city,
+    "country": address country,
+    "street": address country
+  }
+ }
+```
+- `put - /orders/:id`
+Payload => ```
+  {
+    "title": any title,
+    "bookingDate": booking date
+  }
+```
